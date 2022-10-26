@@ -1,6 +1,5 @@
 const brussels = document.getElementById("brussels");
 const now = new Date();
-console.log();
 brussels.innerText = now.toLocaleString();
 
 const anchorage = document.getElementById("anchorage");
@@ -17,3 +16,14 @@ saintPetersburg.innerText = saintPetersburgTime;
 
 //////
 
+const msToDays = (ms) => {
+    return Math.floor(ms / (24*60*60*1000));
+};
+
+const nowInMs = now.getTime();
+const birthdate = new Date(1993, 6, 20);
+const birthdateInMs = birthdate.getTime();
+const birthdateToNow = nowInMs - birthdateInMs;
+const birthdateToNowInDays = msToDays(birthdateToNow);
+const birthdateToNowDisplay = document.getElementById("birthdateToNow");
+birthdateToNowDisplay.innerText = birthdateToNowInDays;
