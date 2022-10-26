@@ -21,3 +21,17 @@ footer {
     margin-top: auto;
     border-top: 3px solid white;
 }
+
+h1 {
+    margin-top: 0;
+    text-align: center;
+}
+
+h2, p {
+    margin-top: 0;
+}
+
+span {
+    color: lightgreen;
+    margin-left: 1rem;
+}
