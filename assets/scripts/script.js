@@ -80,6 +80,8 @@ const year = document.getElementById("year");
 const hours = document.getElementById("hours");
 const min = document.getElementById("min");
 const sec = document.getElementById("sec");
+let hoursOfDay = now.getHours();
+const clock = document.getElementById("clock");
 
 const refresh = () => {
     now = new Date();
@@ -87,9 +89,31 @@ const refresh = () => {
     dayNumber.innerText = now.getDate();
     month.innerText = monthsOfYear[now.getMonth()];
     year.innerText = now.getFullYear();
-    hours.innerText = now.getHours();
+    hours.innerText = hoursOfDay;
     min.innerText = now.getMinutes() < 10 ? `0${now.getMinutes()}` : now.getMinutes();
     sec.innerText = now.getSeconds() < 10 ? `0${now.getSeconds()}` : now.getSeconds();
 };
 
+toggled = false;
+let AMPM = document.getElementById("AMPM");
+
+const toggleFormat = (e) => {
+    if (!toggled) {
+        hoursOfDay = (hoursOfDay % 12) || 12;
+        e.target.innerText = hoursOfDay;
+        if(now.getHours() >= 12) {
+            AMPM.innerText = " PM";
+        } else {
+            AMPM.innerText = " AM";
+        }
+        toggled = true;
+    } else {
+        e.target.innerText = now.getHours();
+        AMPM.innerText = "";
+        hoursOfDay = now.getHours();
+        toggled = false;
+    }
+};
+
 setInterval(refresh, 1000);
+hours.addEventListener("click", toggleFormat);
