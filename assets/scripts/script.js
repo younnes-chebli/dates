@@ -1,7 +1,7 @@
 ////// 1
 
 const brussels = document.getElementById("brussels");
-const now = new Date();
+let now = new Date();
 brussels.innerText = now.toLocaleString();
 
 const anchorage = document.getElementById("anchorage");
@@ -68,3 +68,28 @@ const init = () => {
 numberInput.addEventListener("input", numberHandling);
 numberInput.addEventListener("focusout", init);
 
+////// 4
+
+const daysOfWeek = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+const monthsOfYear = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+
+const day = document.getElementById("day");
+const dayNumber = document.getElementById("day-number");
+const month = document.getElementById("month");
+const year = document.getElementById("year");
+const hours = document.getElementById("hours");
+const min = document.getElementById("min");
+const sec = document.getElementById("sec");
+
+const refresh = () => {
+    now = new Date();
+    day.innerText = daysOfWeek[now.getDay()];
+    dayNumber.innerText = now.getDate();
+    month.innerText = monthsOfYear[now.getMonth()];
+    year.innerText = now.getFullYear();
+    hours.innerText = now.getHours();
+    min.innerText = now.getMinutes() < 10 ? `0${now.getMinutes()}` : now.getMinutes();
+    sec.innerText = now.getSeconds() < 10 ? `0${now.getSeconds()}` : now.getSeconds();
+};
+
+setInterval(refresh, 1000);

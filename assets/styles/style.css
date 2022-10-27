@@ -10,8 +10,8 @@
 
 body {
     margin: 0;
-    height: 100vh;
     max-width: 100vw;
+    min-height: 100vh;
     padding: 3rem;
     display: flex;
     flex-direction: column;
@@ -27,7 +27,7 @@ h1 {
     text-align: center;
 }
 
-h2, p {
+p {
     margin-top: 0;
 }
 
@@ -39,11 +39,14 @@ h2, p {
 .column-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .row-container {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .number-input {
@@ -54,11 +57,51 @@ label {
     margin-left: 1rem;
 }
 
-.input {
-    margin-bottom: 1rem;
-}
-
 .tabulation {
     padding-left: 6rem;
+}
+
+#exo4-container {
+    justify-content: center;
+    margin-bottom: 2rem;
+    height: 70vh;
+}
+
+#calendar {
+    margin-right: 2rem;
+    width: 25%;
+    font-weight: bold;
+    font-size: 4rem;
+    height: 100%;
+}
+
+#calendar * {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+#day, #year {
+    background-color: orangered;
+}
+
+#day {
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%;
+}
+
+#year {
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+}
+
+#month-container, #month-container *{
+    background-color: white;
+    color: black;
+}
+
+#clock {
+    font-size: 6rem;
+    font-weight: bold;
 }
 
