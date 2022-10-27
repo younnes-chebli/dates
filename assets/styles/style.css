@@ -35,3 +35,30 @@ h2, p {
     color: lightgreen;
     margin-left: 1rem;
 }
+
+.column-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.row-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.number-input {
+    width: 8rem;
+}
+
+label {
+    margin-left: 1rem;
+}
+
+.input {
+    margin-bottom: 1rem;
+}
+
+.tabulation {
+    padding-left: 6rem;
+}
+
